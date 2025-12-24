@@ -22,7 +22,6 @@ How does the portfolio behave in adverse markets? We quantify this through downs
 - Stability: Time-Varying Dynamics
 Are the portfolio's factor loadings and risk characteristics stable over time, or do they exhibit significant structural breaks, particularly around periods of financial stress?
 
-
 ## Data Description
 - Asset Returns 
 - Market Index of JP Morgan, Morgan Stanley and Bank of America
@@ -118,29 +117,6 @@ The distributions are roughly bell-shaped but exhibit mild skewness and excess k
 2. CAPM Beta: 0.897568395380774
 3. CAPM Alpha p-value: 0.43359124021212314
 
-OLS Regression Results                            
-==============================================================================
-Dep. Variable:              Portfolio   R-squared:                       0.278
-Model:                            OLS   Adj. R-squared:                  0.275
-Method:                 Least Squares   F-statistic:                     96.01
-Date:                Wed, 24 Dec 2025   Prob (F-statistic):           2.20e-19
-Time:                        21:03:44   Log-Likelihood:                 764.60
-No. Observations:                 251   AIC:                            -1525.
-Df Residuals:                     249   BIC:                            -1518.
-Df Model:                           1                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P>|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-const          0.0006      0.001      0.784      0.434      -0.001       0.002
-Market         0.8976      0.092      9.799      0.000       0.717       1.078
-==============================================================================
-Omnibus:                      104.854   Durbin-Watson:                   2.079
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1074.873
-Skew:                           1.348   Prob(JB):                    3.93e-234
-Kurtosis:                      12.773   Cond. No.                         126.
-==============================================================================
-
 - The portfolio’s beta of 0.8976 indicates slightly lower market sensitivity than the overall market. A 1% change in market excess returns is associated with an approximate 0.9% change in portfolio returns, on average.This suggests the portfolio behaves as a near-market portfolio, with marginally defensive characteristics.
 - The estimated alpha(0.00057) is positive but economically small. The p-value (0.434) indicates that alpha is not statistically significant, implying no reliable evidence of abnormal performance beyond market risk.This supports the CAPM prediction that expected excess returns are fully explained by beta.
 - The model explains approximately 28% of the variation in portfolio returns. While statistically meaningful, this indicates that a large portion of return variability is driven by non-market factors or idiosyncratic risk.
@@ -162,31 +138,6 @@ Kurtosis:                      12.773   Cond. No.                         126.
 1. Static FF Alpha: -0.009356032499512444
 2. Static FF Alpha p-value: 0.018738759230772103
 3. Static FF R-squared: 0.8271300629582513
-OLS Regression Results                            
-==============================================================================
-Dep. Variable:                      y   R-squared:                       0.827
-Model:                            OLS   Adj. R-squared:                  0.697
-Method:                 Least Squares   F-statistic:                     6.380
-Date:                Wed, 24 Dec 2025   Prob (F-statistic):             0.0527
-Time:                        21:03:49   Log-Likelihood:                 33.035
-No. Observations:                   8   AIC:                            -58.07
-Df Residuals:                       4   BIC:                            -57.75
-Df Model:                           3                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P>|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-const         -0.0094      0.002     -3.822      0.019      -0.016      -0.003
-MKT            0.0299      0.068      0.441      0.682      -0.158       0.218
-SMB            0.1888      0.073      2.585      0.061      -0.014       0.392
-HML            0.1152      0.084      1.379      0.240      -0.117       0.347
-==============================================================================
-Omnibus:                        0.104   Durbin-Watson:                   1.027
-Prob(Omnibus):                  0.949   Jarque-Bera (JB):                0.173
-Skew:                          -0.153   Prob(JB):                        0.917
-Kurtosis:                       2.347   Cond. No.                         54.1
-==============================================================================
-
 - Model Fit and Systematic Dominance: The high R-squared of 0.827 indicates that over 82% of the portfolio's return variation is explained by the three Fama-French factors (Market, Size, Value). This confirms that the returns are overwhelmingly driven by systematic risk exposures, not stock-specific events.
 - Negative and Significant Alpha: The static alpha is -0.009 and statistically significant (p-value ≈ 0.019). This is a critical finding: after accounting for exposures to market, size, and value factors, the portfolio underperformed by approximately 0.9% per period (e.g., monthly). This significant negative alpha suggests the portfolio destroyed value on a risk-adjusted basis over the full sample.
 - Factor Exposure Profile: The factor loadings reveal the portfolio's systematic biases:
